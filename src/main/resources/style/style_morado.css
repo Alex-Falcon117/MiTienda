@@ -1,0 +1,648 @@
+*{
+
+    /*  Celeste
+        -color1: #2196F3;
+        -color1-claro: #6EC6FF;
+        -color1-oscuro: #0069C0;*/
+
+    /*  Purpura  
+        -color1: #9C27B0;
+        -color1-claro: #D05CE3;
+        -color1-oscuro: #6A0080;*/
+
+    /*      Morado  */
+    -color1: #3F51B5;
+    -color1-claro: #757DE8;
+    -color1-oscuro: #002984;
+
+/*      Gris  */
+/*        -color1: #607D8B;
+        -color1-claro: #8EACBB;
+        -color1-oscuro: #34515E;*/
+
+    /*   Verde
+        -color1: #22B675;
+        -color1-claro: #63E9A4;
+        -color1-oscuro: #008549;*/
+
+    /*  Oscuro 
+        -color1: #414141;
+        -color1-claro: #818181;
+        -color1-oscuro: #343434;
+        -color-fondo: #919191;*/
+
+    -rojo: #F44336;
+    -rojo-claro: #FF7961;
+    -rojo-oscuro: #BA000D;
+
+
+
+    -texto-color: #000000;
+    -blanco: #FFFFFF;
+
+    -verde: #4CAF50;
+
+}
+#panePagarTodo{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+
+}
+
+#paneMensajeCerrar{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneGanancias{
+    -fx-background-color: -verde;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneStock{
+    -fx-background-color: -rojo;
+    -fx-background-radius: 20 20 20 20;
+
+}
+
+#paneVentas{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneCliente{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneCarrito{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneDatos{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneProveedores{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneMes{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneMensaje{
+    -fx-background-color: -verde;
+    -fx-background-radius: 20 20 20 20;
+
+}
+
+#pane1{
+    -fx-border-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+    -fx-border-radius: 20 20 20 20;
+}
+
+#pane1:disabled{
+    -fx-opacity: 0;
+
+}
+
+#paneMensajeEliminar{
+    -fx-background-color: -rojo;
+    -fx-background-radius: 20 20 20 20;
+
+}
+
+#paneMensajeAgregar{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#pane{
+    -fx-background-color: -color1;
+    -fx-background-radius: 0 0 20 20;
+}
+
+#paneResultado{
+    -fx-background-color: #ffffff;
+}
+
+#paneCalcularVuelto{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+#paneVentaLibre{
+    -fx-background-color: -color1;
+    -fx-background-radius: 20 20 20 20;
+}
+
+
+/*Labels--------------------------------------------------------------*/
+#lbMensaje{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 12;
+}
+
+#lbMensaje1{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 20;
+}
+
+#lbMensaje2{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 20;
+
+}
+
+#lbMensaje3{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 20;
+}
+
+#lbMensaje4{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 20;
+}
+
+#lbMensaje5{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 25;
+
+}
+
+#lbMensaje6{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 20;
+}
+
+#lbMensaje7{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 20;
+}
+
+#lbMensaje8{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 20;
+}
+
+
+#lbMensajeEliminar{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 25;
+}
+
+#lbVentaLibre{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 25;
+}
+
+#lbGanancia{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 35;
+
+}
+
+#lbPerdidas{
+    -fx-text-fill: -texto-color;
+    -fx-font-size: 35;
+}
+
+#lbProveedor{
+    -fx-text-fill: #ababab;
+}
+
+#lbTipo{
+    -fx-text-fill: #ababab;
+}
+
+#lbUsuarios{
+    -fx-text-fill: #ababab;
+
+}
+
+#lbRol{
+    -fx-text-fill: #ababab;
+}
+
+#lbContrasenaIncorrecta{
+    -fx-text-fill: #BA000D;
+
+}
+
+.label{
+    -fx-text-fill: -texto-color;
+}
+
+
+/*Buttons--------------------------------------------------------------*/
+#btnQuitar{
+    -fx-background-color: transparent;
+    -fx-border-color: -rojo-oscuro;
+    -fx-border-radius: 30 30 30 30;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+
+}
+
+#btnQuitar:hover{
+    -fx-background-color: -rojo-claro;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+
+}
+
+#btnQuitar:pressed{
+    -fx-background-color: -rojo-oscuro;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+}
+
+
+.button{
+    -fx-background-color: -color1;
+    -fx-border-color: -color1-oscuro;
+    -fx-border-radius: 30 30 30 30;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+}
+
+.button:hover{
+    -fx-background-color: -color1-claro;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+}
+
+.button:pressed{
+    -fx-background-color: -color1-oscuro;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+}
+
+#btnSi{
+    -fx-background-color: transparent;
+    -fx-border-color: -rojo-oscuro;
+    -fx-border-radius: 30 30 30 30;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+
+}
+
+#btnSi:hover{
+    -fx-background-color: -rojo-claro;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+
+}
+
+#btnSi:pressed{
+    -fx-background-color: -rojo-oscuro;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #ffffff;
+}
+
+
+/*Boton ver contraseña*/
+#tbVer{
+    -fx-background-color: transparent;
+    -fx-border-radius: 30 30 30 30;
+    -fx-border-color: -color1;
+
+}
+
+#tbVer:hover{
+    -fx-background-color: -color1-claro;
+    -fx-background-radius: 30 30 30 30;
+
+}
+
+//Barra de menus
+.label{
+    -fx-text-fill: #000000;
+}
+
+
+#btnCerrarSecion:hover{
+    -fx-background-color: -color1-claro;
+    -fx-background-radius: 30 0 30 30;
+    -fx-text-fill: -texto-color;
+}
+
+
+.toggle-button{
+    -fx-background-color: -color1;
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: -texto-color;
+    /*    -fx-border-width: 0 0 1 0;
+        -fx-border-color: #FFFFFF;*/
+
+}
+
+.toggle-button:hover{
+    -fx-background-color: -color1-claro;
+    -fx-background-radius: 30 0 0 30;
+    -fx-text-fill: -texto-color;
+
+}
+
+.toggle-button:selected{
+    -fx-background-color: -blanco;
+    -fx-background-radius: 30 0 0 30;
+    -fx-text-fill: -texto-color;
+}
+
+#vbox{
+    -fx-background-color: -color1;
+    -fx-background-radius: 0 30 30 0;
+
+}
+
+
+
+/*Text--------------------------------------------------------------*/
+
+
+.menu-button{
+    -fx-background-radius: 30 30 30 30;
+    -fx-border-radius: 30 30 30 30;
+    -fx-border-color: -color1;
+    -fx-background-color: #ffffff;
+}
+
+.menu-button .context-menu{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-radius: 5 5 5 5;
+    -fx-border-color: -color1-claro;
+
+}
+
+.check-menu-item:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: -color1-claro;
+    -fx-text-fill: -texto-color;
+
+}
+
+.check-menu-item:focused{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: -color1-claro;
+    -fx-text-fill: -texto-color;
+
+}
+#rmiCeleste:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #2196F3;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiCeleste:focused{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #2196F3;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiPurpura:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #9C27B0;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiPurpura:focused{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #9C27B0;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiMorado:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #3F51B5;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiMorado:focused{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #3F51B5;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiGris:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #607D8B;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiGris:focused{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #607D8B;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiVerde:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #22B675;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+#rmiVerde:focused{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #22B675;
+/*    -fx-text-fill: -texto-color;*/
+
+}
+
+/*.radio-menu-item:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: -color1-claro;
+    -fx-text-fill: -texto-color;
+
+}
+
+.radio-menu-item:focused{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: -color1-claro;
+    -fx-text-fill: -texto-color;
+
+}*/
+
+#cbTipo .text-field{
+    -fx-background-radius: 30 0 0 30;
+    -fx-border-radius: 30 0 0 30;
+}
+
+#cbTipo .arrow-button {
+    -fx-background-radius: 0 30 30 0;
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 0 30 30 0;
+    -fx-border-color: -color1;
+}
+
+/*.combo-box .list-view {
+    -fx-background-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+}*/
+
+.combo-box .list-cell:hover {
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: -color1-claro;
+    -fx-text-fill: -texto-color;
+}
+
+/*.combo-box .list-cell:focused {
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: #0069C0;
+    -fx-text-fill: #ffffff;
+}*/
+
+.combo-box .list-cell:selected {
+    -fx-background-radius: 30 30 30 30;
+    -fx-text-fill: #000000;
+}
+
+.combo-box{
+    -fx-background-radius: 30 30 30 30;
+    -fx-border-radius: 30 30 30 30;
+    -fx-border-color: -color1;
+    -fx-background-color: #ffffff;
+
+}
+
+.check-box{
+
+    -fx-text-fill: -texto-color;
+}
+
+.text-field{
+    -fx-background-radius: 30 30 30 30;
+    -fx-border-radius: 30 30 30 30;
+    -fx-border-color: -color1;
+}
+
+#tvGanancias{
+    -fx-base: -verde;
+
+}
+
+#tvPerdidas{
+    -fx-base: -rojo;
+
+}
+
+.table-view {
+    -fx-base: -color1;
+    -fx-control-inner-background: -color1;
+    -fx-background-color: transparent;
+    /*  -fx-table-cell-border-color: #6EC6FF;
+        -fx-table-header-border-color: #6EC6FF;*/
+    -fx-padding: 0;
+}
+
+
+.table-column{
+    -fx-border-color: -color1-oscuro;
+    -fx-border-width: 1 0 0 2;
+
+}
+#lvSinStock{
+    -fx-background-color: transparent;
+    -fx-border-color: -rojo-oscuro;
+
+
+}
+
+#lvSinStock .list-cell{
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+
+
+}
+
+.list-view{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-radius: 5 5 5 5;
+    -fx-border-color: -color1-claro;
+}
+
+.list-cell{
+    -fx-background-radius: 5 5 5 5;
+    -fx-border-radius: 5 5 5 5;
+}
+
+.list-view .list-cell:hover{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: -color1-claro;
+    -fx-text-fill: #000000;
+
+}
+
+.list-view .list-cell:selected{
+    -fx-background-radius: 30 30 30 30;
+    -fx-background-color: -color1-oscuro;
+    -fx-text-fill: #000000;
+
+}
+
+#naGanancias{
+    -fx-tick-label-fill: -texto-color;
+}
+
+#caMeses{
+    -fx-tick-label-fill: -texto-color;
+
+}
+
+.default-color0.chart-bar{
+
+    -fx-bar-fill: -verde;
+}
+
+.default-color1.chart-bar{
+
+    -fx-bar-fill: -rojo;
+}
+
+.chart-bar{
+    -fx-background-radius: 5 5 0 0;
+}
+
+#tcPrecio{
+    -fx-alignment: CENTER-RIGHT;
+    
+}
+#tcTotalG{
+    -fx-alignment: CENTER-RIGHT;
+    
+}
+#tcTotal{
+    -fx-alignment: CENTER-RIGHT;
+    
+}
+#Precio{
+    -fx-alignment: CENTER-RIGHT;
+    
+}
+#tcPCompra{
+    -fx-alignment: CENTER-RIGHT;
+    
+}
+#tcPVenta{
+    -fx-alignment: CENTER-RIGHT;
+    
+}
+
+
+
+

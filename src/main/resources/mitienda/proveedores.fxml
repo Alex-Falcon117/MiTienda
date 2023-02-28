@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProveedoresController">
+   <children>
+      <Pane fx:id="paneDatos" layoutX="31.0" layoutY="14.0" prefHeight="173.0" prefWidth="815.0">
+         <children>
+            <Label layoutX="315.0" layoutY="9.0" text="Datos del proveedor">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="18.0" layoutY="39.0" prefHeight="3.0" prefWidth="774.0" />
+            <TextField fx:id="tfNombre" layoutX="18.0" layoutY="62.0" onKeyReleased="#onEditando" prefHeight="27.0" prefWidth="228.0" promptText="Nombre" />
+            <TextField fx:id="tfCuild" layoutX="257.0" layoutY="63.0" onKeyReleased="#onEditando" promptText="Cuild" />
+            <TextField fx:id="tfDireccion" layoutX="418.0" layoutY="63.0" onKeyReleased="#onEditando" prefHeight="27.0" prefWidth="374.0" promptText="Dirección" />
+            <TextField fx:id="tfOtraInfo" layoutX="258.0" layoutY="110.0" onKeyReleased="#onEditando" prefHeight="27.0" prefWidth="374.0" promptText="Otra información" />
+            <TextField fx:id="tfCelular" layoutX="18.0" layoutY="110.0" onKeyReleased="#onEditando" prefHeight="27.0" prefWidth="228.0" promptText="Teléfono/Celular" />
+            <Button fx:id="btnGuardar" layoutX="650.0" layoutY="110.0" mnemonicParsing="false" onAction="#onGuardar" text="Guardar" />
+            <ImageView fx:id="ivDatos" fitHeight="25.0" fitWidth="25.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="btnCancelar" layoutX="728.0" layoutY="110.0" mnemonicParsing="false" onAction="#onCancelar" text="Cancelar" />
+            <Label fx:id="lbMensaje1" layoutX="14.0" layoutY="47.0" text="*" />
+            <Label fx:id="lbMensaje2" layoutX="254.0" layoutY="47.0" text="*" textFill="#970101" />
+            <Label fx:id="lbMensaje4" layoutX="14.0" layoutY="95.0" text="*" textFill="#970101" />
+            <Label fx:id="lbMensaje3" layoutX="414.0" layoutY="47.0" text="*" textFill="#970101" />
+            <Label fx:id="lbMensaje" layoutX="275.0" layoutY="151.0" text="Los campos marcados con un (*) son obligatorios" textFill="#b8000f" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneProveedores" layoutX="31.0" layoutY="208.0" prefHeight="365.0" prefWidth="815.0">
+         <children>
+            <Separator layoutX="16.0" layoutY="37.0" prefHeight="3.0" prefWidth="774.0" />
+            <Label layoutX="348.0" layoutY="7.0" text="Proveedores">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="319.0" prefHeight="3.0" prefWidth="774.0" />
+            <Button fx:id="btnEditar" disable="true" layoutX="339.0" layoutY="327.0" mnemonicParsing="false" onAction="#onEditar" text="Editar datos" />
+            <Button fx:id="btnQuitar" disable="true" layoutX="444.0" layoutY="327.0" mnemonicParsing="false" onAction="#onBorrar" text="Borrar" />
+            <TableView fx:id="tvProveedores" layoutX="14.0" layoutY="42.0" onMouseClicked="#onClickTable" prefHeight="274.0" prefWidth="774.0">
+              <columns>
+                  <TableColumn fx:id="tcID" prefWidth="27.0" text="ID" visible="false" />
+                <TableColumn fx:id="tcNombre" editable="false" maxWidth="1.7976931348623157E308" prefWidth="149.0" sortType="DESCENDING" text="Nombre" />
+                <TableColumn fx:id="tcCuild" editable="false" maxWidth="1.7976931348623157E308" prefWidth="88.0" sortable="false" text="Cuild" />
+                  <TableColumn fx:id="tcDireccion" editable="false" maxWidth="1.7976931348623157E308" prefWidth="169.0" sortable="false" text="Dirección" />
+                  <TableColumn fx:id="tcCelular" editable="false" maxWidth="1.7976931348623157E308" minWidth="0.0" prefWidth="111.0" sortable="false" text="Teléfono/Celular" />
+                  <TableColumn fx:id="tcOtraInfo" editable="false" maxWidth="1.7976931348623157E308" prefWidth="256.0" sortable="false" text="Otra información" />
+              </columns>
+            </TableView>
+            <ImageView fx:id="ivProveedores" fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneMensaje" layoutX="275.0" layoutY="7.0" prefHeight="56.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensaje5" alignment="CENTER" layoutX="15.0" layoutY="10.0" prefHeight="36.0" prefWidth="284.0" text="Guardado" />
+         </children>
+         <effect>
+            <DropShadow height="26.93" radius="18.895" width="50.65" />
+         </effect>
+      </Pane>
+      <Pane fx:id="paneMensajeEliminar" layoutX="275.0" layoutY="423.0" prefHeight="160.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensajeEliminar" alignment="CENTER" layoutY="11.0" prefHeight="36.0" prefWidth="315.0" text="Borrar proveedor" />
+            <Button fx:id="btnSi" layoutX="102.0" layoutY="119.0" mnemonicParsing="false" onAction="#onSi" prefHeight="27.0" prefWidth="51.0" text="Si" />
+            <Button layoutX="164.0" layoutY="119.0" mnemonicParsing="false" onAction="#onNo" prefHeight="27.0" prefWidth="51.0" text="No" />
+            <Label fx:id="lbNombreProveedor" alignment="CENTER" layoutX="11.0" layoutY="63.0" prefHeight="17.0" prefWidth="295.0" text="..." textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="98.0" text="No podra volver a recuperar la información" />
+            <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="284.0" />
+         </children>
+         <effect>
+            <DropShadow height="38.79" radius="21.86" width="50.65" />
+         </effect>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

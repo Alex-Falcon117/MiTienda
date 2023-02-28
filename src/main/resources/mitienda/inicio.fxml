@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="600.0" minWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InicioController">
+   <children>
+      <Pane fx:id="paneStock" layoutX="287.9" layoutY="15.6" minHeight="173.0" minWidth="234.0">
+         <children>
+            <Separator layoutX="17.0" layoutY="39.0" prefWidth="200.0" />
+            <Label layoutX="46.0" layoutY="9.0" text="Productos sin stock">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="ivPerdidas" fitHeight="25.0" fitWidth="25.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+            <ListView fx:id="lvSinStock" layoutX="17.0" layoutY="44.0" onMouseClicked="#onListaSinStock" prefHeight="122.0" prefWidth="200.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneGanancias" layoutX="31.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="173.0" minWidth="234.0">
+         <children>
+            <Separator layoutX="17.0" layoutY="39.0" prefWidth="200.0" />
+            <Label layoutX="43.0" layoutY="9.0" text="Ganancias del día">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbGanancia" alignment="CENTER" layoutX="16.0" layoutY="62.0" prefHeight="51.0" prefWidth="200.0" text="\$00,00">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="ivGanancias" fitHeight="25.0" fitWidth="25.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneCliente" disable="true" layoutX="31.0" layoutY="400.0" minHeight="173.0" minWidth="485.0" prefHeight="173.0" prefWidth="492.0">
+         <children>
+            <Separator layoutX="21.0" layoutY="35.0" prefWidth="450.0" />
+            <Label layoutX="185.0" layoutY="5.0" text="Buscar cliente">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfNombreCliente" layoutX="18.0" layoutY="50.0" onKeyPressed="#onBorrarBusquedaCliente" onKeyReleased="#onBuscarCliente" prefHeight="27.0" prefWidth="380.0" promptText="Nombre y apellido" />
+            <Label contentDisplay="RIGHT" layoutX="21.0" layoutY="97.0" text="DNI:">
+               <graphic>
+                  <Label fx:id="lbDNI" text="..." />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label contentDisplay="RIGHT" layoutX="111.0" layoutY="97.0" text="Dirección:">
+               <graphic>
+                  <Label fx:id="lbDireccion" text="..." />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label contentDisplay="RIGHT" layoutX="354.0" layoutY="97.0" text="Deuda total:">
+               <graphic>
+                  <Label fx:id="lbDeuda" text="..." />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Button layoutX="407.0" layoutY="50.0" mnemonicParsing="false" onAction="#onCancelarClientes" text="Cancelar" />
+            <Button fx:id="btnAgragar" disable="true" layoutX="215.0" layoutY="132.0" mnemonicParsing="false" onAction="#onAgragarLibreta" text="Agregar" />
+            <ImageView fx:id="ivCliente" fitHeight="25.0" fitWidth="25.0" layoutX="21.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+            <ListView fx:id="lvClientes" layoutX="18.0" layoutY="77.0" onMouseClicked="#onListaClientes" prefHeight="86.0" prefWidth="380.0" visible="false">
+               <effect>
+                  <DropShadow color="#00000066" height="22.49" offsetY="5.0" radius="11.114999999999998" width="23.97" />
+               </effect></ListView>
+         </children>
+      </Pane>
+      <Pane fx:id="paneCarrito" disable="true" layoutX="546.0" layoutY="16.0" minHeight="557.0" minWidth="300.0" prefHeight="557.0" prefWidth="300.0">
+         <children>
+            <Separator layoutX="19.0" layoutY="40.0" prefWidth="260.0" />
+            <Label layoutX="130.0" layoutY="9.0" text="Carrito">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tvCarrito" layoutX="19.0" layoutY="44.0" onMouseClicked="#onClickTabla" prefHeight="344.0" prefWidth="260.0">
+              <columns>
+                  <TableColumn fx:id="tcID" prefWidth="23.0" text="ID" visible="false" />
+                  <TableColumn fx:id="tcProducto" editable="false" prefWidth="87.0" text="Producto" />
+                  <TableColumn fx:id="tcDetalle" prefWidth="146.0" text="Detalles" />
+                <TableColumn fx:id="tcCantidad" editable="false" maxWidth="91.0" prefWidth="60.0" resizable="false" text="Cantidad" />
+                  <TableColumn fx:id="tcPrecio" editable="false" prefWidth="42.0" text="Precio" />
+              </columns>
+            </TableView>
+            <Separator layoutX="19.0" layoutY="392.0" prefWidth="260.0" />
+            <Button fx:id="btnQuitar" disable="true" layoutX="91.0" layoutY="406.0" mnemonicParsing="false" onAction="#onQuitarLista" text="Quitar de la lista" />
+            <Button fx:id="btnVender" layoutX="22.0" layoutY="521.0" mnemonicParsing="false" onAction="#onVender" prefHeight="27.0" prefWidth="260.0" text="Vender" />
+            <CheckBox fx:id="cbFiados" layoutX="19.0" layoutY="446.0" mnemonicParsing="false" onAction="#onCheck" text="Agregar a libreta" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="119.0" layoutY="475.0" prefHeight="30.0" prefWidth="171.0" text="Total:" textAlignment="RIGHT">
+               <graphic>
+                  <Label fx:id="lbTotal">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </graphic>
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Button fx:id="btnCalcularVuelto" layoutX="20.0" layoutY="480.0" mnemonicParsing="false" onAction="#onCalcularVuelto" text="Calcular vuelto" />
+            <ImageView fx:id="ivCarrito" fitHeight="25.0" fitWidth="25.0" layoutX="19.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneVentas" layoutX="31.0" layoutY="208.0" minHeight="173.0" minWidth="485.0" prefHeight="173.0" prefWidth="492.0">
+         <children>
+            <Separator layoutX="20.0" layoutY="37.0" prefWidth="450.0" />
+            <Label layoutX="213.0" layoutY="6.0" text="Vender">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfBuscar" layoutX="18.0" layoutY="51.0" onKeyPressed="#onBorrarBusquedaProducto" onKeyReleased="#onBuscarProductos" prefHeight="27.0" prefWidth="380.0" promptText="Buscar producto" />
+            <Button layoutX="407.0" layoutY="51.0" mnemonicParsing="false" onAction="#onCancelar" text="Cancelar" />
+            <Label contentDisplay="RIGHT" layoutX="20.0" layoutY="99.0" text="Disponible:">
+               <graphic>
+                  <Label fx:id="lbCantidad" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label contentDisplay="RIGHT" layoutX="387.0" layoutY="99.0" text="Precio:">
+               <graphic>
+                  <Label fx:id="lbPrecio" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="tfCantidad" disable="true" layoutX="20.0" layoutY="127.0" onKeyReleased="#onIngresarCantidad" promptText="Cantidad a comprar" />
+            <Button fx:id="btnAgregarCarrito" disable="true" layoutX="361.0" layoutY="127.0" mnemonicParsing="false" onAction="#onAgregarCarrito" text="Agregar al carrito" />
+            <ImageView fx:id="ivVender" fitHeight="25.0" fitWidth="25.0" layoutX="20.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <Label contentDisplay="RIGHT" layoutX="177.0" layoutY="132.0" text="Total:">
+               <graphic>
+                  <Label fx:id="lbTotalProducto" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="128.0" layoutY="99.0" text="Detalles:">
+               <graphic>
+                  <Label fx:id="lbDetalles" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="cbVentaLibre" disable="true" layoutX="268.0" layoutY="132.0" mnemonicParsing="false" onAction="#onVentaLibre" text="Venta libre" />
+            <ListView fx:id="lvProducto" layoutX="18.0" layoutY="78.0" onMouseClicked="#onListaProductos" prefHeight="86.0" prefWidth="380.0" visible="false">
+               <effect>
+                  <DropShadow color="#00000066" offsetY="5.0" radius="10.7425" width="23.97" />
+               </effect></ListView>
+         </children>
+      </Pane>
+      <Pane fx:id="paneMensaje" layoutX="275.0" layoutY="7.0" prefHeight="56.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensaje5" alignment="CENTER" layoutX="15.0" layoutY="10.0" prefHeight="36.0" prefWidth="284.0" text="Guardado" />
+         </children>
+         <effect>
+            <DropShadow height="26.93" radius="18.895" width="50.65" />
+         </effect>
+      </Pane>
+      <Pane fx:id="paneCalcularVuelto" layoutX="275.0" layoutY="423.0" prefHeight="160.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensajeEliminar" alignment="CENTER" layoutY="11.0" prefHeight="36.0" prefWidth="315.0" text="Calcular vuelto" />
+            <Button fx:id="btnFinalizarVenta" disable="true" layoutX="28.0" layoutY="119.0" mnemonicParsing="false" onAction="#onFinalizarVenta" prefHeight="27.0" prefWidth="121.0" text="Finalizar venta" />
+            <Label contentDisplay="RIGHT" layoutX="172.0" layoutY="88.0" text="Vuelto:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <Label fx:id="lbVuelto" text="...">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </graphic></Label>
+            <Label contentDisplay="RIGHT" layoutX="42.0" layoutY="88.0" text="Total:">
+               <graphic>
+                  <Label fx:id="lbPrecioTotal" alignment="CENTER" text="..." textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfDineroEntregado" layoutX="28.0" layoutY="54.0" onKeyReleased="#onCalculandoVuelto" prefHeight="27.0" prefWidth="260.0" promptText="Dinero entregado" />
+            <Button layoutX="207.0" layoutY="119.0" mnemonicParsing="false" onAction="#onCerrar" prefHeight="27.0" prefWidth="81.0" text="Cerrar" />
+            <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="284.0" />
+         </children>
+         <effect>
+            <DropShadow height="38.79" radius="21.86" width="50.65" />
+         </effect>
+      </Pane>
+      <Pane fx:id="paneVentaLibre" layoutX="275.0" layoutY="423.0" prefHeight="160.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbVentaLibre" alignment="CENTER" layoutY="11.0" prefHeight="36.0" prefWidth="315.0" text="Venta libre" />
+            <Button fx:id="btnAgregarCarrito2" disable="true" layoutX="28.0" layoutY="119.0" mnemonicParsing="false" onAction="#onAgregarCarrito" prefHeight="27.0" prefWidth="121.0" text="Agregar al carrito" />
+            <Button layoutX="207.0" layoutY="119.0" mnemonicParsing="false" onAction="#onCerrarVentaLibre" prefHeight="27.0" prefWidth="81.0" text="Cerrar" />
+            <TextField fx:id="tfPrecio" layoutX="28.0" layoutY="68.0" onKeyReleased="#onIngresarPrecioLibre" prefHeight="27.0" prefWidth="260.0" promptText="Ingresé el precio" />
+            <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="284.0" />
+         </children>
+         <effect>
+            <DropShadow height="38.79" radius="21.86" width="50.65" />
+         </effect>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

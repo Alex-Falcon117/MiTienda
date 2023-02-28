@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="600.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LibretaController">
+   <children>
+      <Pane fx:id="paneProveedores" disable="true" layoutX="31.0" layoutY="208.0" prefHeight="365.0" prefWidth="815.0">
+         <children>
+            <Separator layoutX="16.0" layoutY="37.0" prefHeight="3.0" prefWidth="774.0" />
+            <Label layoutX="346.0" layoutY="9.0" text="Productos fiados">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="319.0" prefHeight="3.0" prefWidth="774.0" />
+            <Button fx:id="btnPagar" disable="true" layoutX="122.0" layoutY="328.0" mnemonicParsing="false" onAction="#onPagar" prefHeight="27.0" prefWidth="65.0" text="Pagar" />
+            <TableView fx:id="tvLibreta" layoutX="14.0" layoutY="42.0" onMouseClicked="#onTablaLibreta" prefHeight="274.0" prefWidth="774.0">
+               <columns>
+                  <TableColumn fx:id="tcIDCLiente" prefWidth="75.0" text="IDCliente" visible="false" />
+                  <TableColumn fx:id="tcIDProducto" prefWidth="32.0" text="ID" visible="false" />
+                  <TableColumn fx:id="tcProducto" editable="false" prefWidth="192.0" text="Producto" />
+                  <TableColumn fx:id="tcDetalle" editable="false" prefWidth="274.0" sortable="false" text="Detalle" />
+                  <TableColumn fx:id="tcCantidad" editable="false" minWidth="0.0" prefWidth="91.0" sortable="false" text="Cantidad" />
+                  <TableColumn fx:id="tcFecha" editable="false" minWidth="0.0" prefWidth="132.0" text="Fecha de compra" />
+                  <TableColumn fx:id="tcPrecio" maxWidth="171.0" prefWidth="85.0" resizable="false" sortable="false" text="Precio" />
+               </columns>
+            </TableView>
+            <Label fx:id="lbTotal" alignment="CENTER_RIGHT" layoutX="570.0" layoutY="326.0" prefHeight="30.0" prefWidth="221.0" text="Total:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="cbPagarTodo" disable="true" layoutX="16.0" layoutY="333.0" mnemonicParsing="false" text="Pagar todo">
+               <font>
+                  <Font size="13.0" />
+               </font></CheckBox>
+            <ImageView fx:id="ivProductos" fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneDatos" layoutX="31.0" layoutY="14.0" prefHeight="173.0" prefWidth="815.0">
+         <children>
+            <Label layoutX="370.0" layoutY="9.0" text="Clientes">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="18.0" layoutY="39.0" prefHeight="3.0" prefWidth="774.0" />
+            <TableView fx:id="tvClientes" layoutX="18.0" layoutY="43.0" onMouseClicked="#onTableCliked" prefHeight="122.0" prefWidth="774.0">
+              <columns>
+                  <TableColumn fx:id="tcIDCliente" prefWidth="30.0" text="ID" visible="false" />
+                <TableColumn fx:id="tcNombre" prefWidth="188.0" text="Nombre y apellido" />
+                <TableColumn fx:id="tcDNI" prefWidth="146.0" text="DNI" />
+                  <TableColumn fx:id="tcDomicilio" editable="false" prefWidth="297.0" sortable="false" text="Dirección" />
+                  <TableColumn fx:id="tcCelular" editable="false" maxWidth="170.0" prefWidth="143.0" sortable="false" text="Teléfono/Celular" />
+              </columns>
+            </TableView>
+            <ImageView fx:id="ivClientes" fitHeight="25.0" fitWidth="25.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="panePagarTodo" layoutX="275.0" layoutY="423.0" prefHeight="160.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbVentaLibre" alignment="CENTER" layoutY="11.0" prefHeight="36.0" prefWidth="315.0" text="Pagar todo" />
+            <Button fx:id="btnAgregarCarrito2" layoutX="102.0" layoutY="119.0" mnemonicParsing="false" onAction="#onSi" prefHeight="27.0" prefWidth="51.0" text="Si" />
+            <Button layoutX="164.0" layoutY="119.0" mnemonicParsing="false" onAction="#onNo" prefHeight="27.0" prefWidth="51.0" text="no" />
+            <Label fx:id="lbPagarTotal" alignment="CENTER" layoutX="17.0" layoutY="65.0" prefHeight="17.0" prefWidth="274.0" text="Total:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="284.0" />
+         </children>
+         <effect>
+            <DropShadow height="38.79" radius="21.86" width="50.65" />
+         </effect>
+      </Pane>
+      <Pane fx:id="paneMensaje" layoutX="275.0" layoutY="7.0" prefHeight="56.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensaje5" alignment="CENTER" layoutX="15.0" layoutY="10.0" prefHeight="36.0" prefWidth="284.0" text="Guardado" />
+         </children>
+         <effect>
+            <DropShadow height="26.93" radius="18.895" width="50.65" />
+         </effect>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

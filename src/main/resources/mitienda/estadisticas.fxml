@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EstadisticasController">
+   <children>
+      <Pane fx:id="paneProveedores" layoutX="31.0" layoutY="12.0" prefHeight="561.0" prefWidth="815.0">
+         <children>
+            <Separator layoutX="16.0" layoutY="37.0" prefHeight="3.0" prefWidth="774.0" />
+            <Label layoutX="380.0" layoutY="8.0" text="Gráficas">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="517.0" prefHeight="3.0" prefWidth="774.0" />
+            <ImageView fx:id="ivDia" fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            <BarChart fx:id="bcEstadistica" alternativeColumnFillVisible="true" animated="false" barGap="0.0" categoryGap="20.0" layoutX="3.0" layoutY="89.0" prefHeight="384.0" prefWidth="805.0">
+              <xAxis>
+                <CategoryAxis fx:id="caMeses" label="Meses" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="naGanancias" label="Total" side="LEFT" tickLabelGap="0.0" tickLength="5.0" upperBound="0.0" />
+              </yAxis>
+            </BarChart>
+            <ComboBox fx:id="cbAnnio" layoutX="326.0" layoutY="51.0" onAction="#onSeleccionAnnio" prefHeight="27.0" prefWidth="178.0" promptText="Seleccioné un año aquí" />
+            <Label fx:id="lbGanaciaAnual" layoutX="17.0" layoutY="525.0" visible="false">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnVerDetalles" disable="true" layoutX="682.0" layoutY="527.0" mnemonicParsing="false" onAction="#onVerDetalles" prefHeight="27.0" prefWidth="108.0" text="Ver detalles" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneCarrito" layoutX="31.0" layoutY="12.0" prefHeight="561.0" prefWidth="815.0" visible="false">
+         <children>
+            <SplitPane dividerPositions="0.5064766839378239" layoutX="14.0" layoutY="40.0" prefHeight="469.0" prefWidth="774.0" style="-fx-background-color: transparent;">
+              <items>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tvGanancias" layoutY="23.0" prefHeight="420.0" prefWidth="388.0">
+                           <columns>
+                              <TableColumn fx:id="tcProductoG" maxWidth="1.7976931348623157E308" prefWidth="204.0" text="Producto" />
+                              <TableColumn fx:id="tcFechaG" maxWidth="1.7976931348623157E308" prefWidth="72.0" text="Fecha" />
+                              <TableColumn fx:id="tcCantidadG" maxWidth="1.7976931348623157E308" prefWidth="59.0" text="Cantidad" />
+                              <TableColumn fx:id="tcTotalG" maxWidth="1.7976931348623157E308" prefWidth="53.0" text="Total" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="139.0" layoutY="3.0" text="Ventas de productos">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbG" alignment="CENTER_RIGHT" layoutX="243.0" layoutY="446.0" prefHeight="20.0" prefWidth="144.0" text="Total:">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane SplitPane.resizableWithParent="false">
+                     <children>
+                        <Label fx:id="lbP" alignment="CENTER_RIGHT" layoutX="291.0" layoutY="446.0" prefHeight="20.0" prefWidth="144.0" text="Total:">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tvPerdidas" layoutY="23.0" prefHeight="420.0" prefWidth="441.0">
+                           <columns>
+                              <TableColumn fx:id="tcProveedor" maxWidth="1.7976931348623157E308" prefWidth="98.0" text="Proveedor" />
+                              <TableColumn fx:id="tcProducto" maxWidth="1.7976931348623157E308" prefWidth="133.0" text="Producto" />
+                              <TableColumn fx:id="tcFecha" maxWidth="1.7976931348623157E308" prefWidth="77.0" text="Fecha" />
+                              <TableColumn fx:id="tcCantidad" maxWidth="1.7976931348623157E308" prefWidth="74.0" text="Cantidad" />
+                              <TableColumn fx:id="tcTotal" maxWidth="1.7976931348623157E308" prefWidth="59.0" text="Total" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="159.0" layoutY="2.0" text="Compra de productos">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+              </items>
+            </SplitPane>
+            <Separator layoutX="16.0" layoutY="37.0" prefHeight="3.0" prefWidth="774.0" />
+            <Label layoutX="372.0" layoutY="8.0" text="Detalles">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="517.0" prefHeight="3.0" prefWidth="774.0" />
+            <Button layoutX="680.0" layoutY="527.0" mnemonicParsing="false" onAction="#onOcultarDetalles" prefHeight="27.0" prefWidth="108.0" text="Ocultar detalles" />
+            <Label fx:id="lbGanaciaAnual1" layoutX="17.0" layoutY="525.0" text="Ganancia anual total:">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

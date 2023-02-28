@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductoController">
+   <children>
+      <Pane fx:id="paneProveedores" layoutX="31.0" layoutY="208.0" prefHeight="365.0" prefWidth="815.0">
+         <children>
+            <Separator layoutX="16.0" layoutY="37.0" prefHeight="3.0" prefWidth="774.0" />
+            <Label layoutX="356.0" layoutY="7.0" text="Productos">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="319.0" prefHeight="3.0" prefWidth="774.0" />
+            <Button fx:id="btnEditar" layoutX="339.0" layoutY="327.0" mnemonicParsing="false" onAction="#onEditar" text="Editar datos" />
+            <Button fx:id="btnQuitar" layoutX="444.0" layoutY="327.0" mnemonicParsing="false" onAction="#onBorrar" text="Borrar" />
+            <TableView fx:id="tvProductos" layoutX="14.0" layoutY="42.0" onMouseClicked="#onClickedTable" prefHeight="274.0" prefWidth="774.0">
+               <columns>
+                  <TableColumn fx:id="tcID" editable="false" prefWidth="75.0" sortable="false" text="ID" visible="false" />
+                  <TableColumn fx:id="tcProveedor" editable="false" prefWidth="155.0" sortType="DESCENDING" text="Proveedor" />
+                  <TableColumn fx:id="tcNombre" editable="false" prefWidth="165.0" text="Nombre/Marca" />
+                  <TableColumn fx:id="tcPropiedades" editable="false" prefWidth="248.0" sortable="false" text="Detalles" />
+                  <TableColumn fx:id="tcCantidad" editable="false" minWidth="0.0" prefWidth="70.0" text="Cantidad" />
+                  <TableColumn fx:id="tcPCompra" editable="false" prefWidth="74.0" sortable="false" text="P. Compra" />
+                  <TableColumn fx:id="tcPVenta" editable="false" prefWidth="62.0" sortable="false" text="P. Venta" />
+               </columns>
+            </TableView>
+            <ImageView fx:id="ivProductos" fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneDatos" layoutX="31.0" layoutY="14.0" prefHeight="173.0" prefWidth="815.0">
+         <children>
+            <Label layoutX="322.0" layoutY="9.0" text="Datos del producto">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="18.0" layoutY="39.0" prefHeight="3.0" prefWidth="774.0" />
+            <TextField fx:id="tfMarca" layoutX="274.0" layoutY="63.0" onKeyReleased="#onEditandoDatos" prefHeight="27.0" prefWidth="255.0" promptText="Nombre/Marca" />
+            <TextField fx:id="tfPVenta" layoutX="287.0" layoutY="110.0" onKeyReleased="#onEditandoDatos" prefHeight="27.0" prefWidth="127.0" promptText="Precio de venta" />
+            <TextField fx:id="tfPropiedades" layoutX="542.0" layoutY="63.0" onKeyReleased="#onEditandoDatos" prefHeight="27.0" prefWidth="255.0" promptText="Detalles" />
+            <TextField fx:id="tfPCompra" layoutX="153.0" layoutY="110.0" onKeyReleased="#onEditandoDatos" prefHeight="27.0" prefWidth="127.0" promptText="Precio de compra" />
+            <TextField fx:id="tfCantidad" layoutX="16.0" layoutY="110.0" onKeyReleased="#onEditandoDatos" prefHeight="27.0" prefWidth="127.0" promptText="Cantidad" />
+            <Button layoutX="650.0" layoutY="110.0" mnemonicParsing="false" onAction="#onGuardar" text="Guardar" />
+            <ImageView fx:id="ivDatos" fitHeight="25.0" fitWidth="25.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="728.0" layoutY="110.0" mnemonicParsing="false" onAction="#onCancelar" text="Cancelar" />
+            <Label fx:id="lbMensaje" layoutX="275.0" layoutY="151.0" text="Los campos marcados con un (*) son obligatorios" textFill="#b8000f" />
+            <Label fx:id="lbMensaje1" layoutX="11.0" layoutY="49.0" text="*" />
+            <Label fx:id="lbMensaje2" layoutX="272.0" layoutY="49.0" text="*" />
+            <Label fx:id="lbMensaje3" layoutX="539.0" layoutY="46.0" text="*" />
+            <Label fx:id="lbMensaje8" layoutX="12.0" layoutY="93.0" text="*" />
+            <Label fx:id="lbMensaje6" layoutX="149.0" layoutY="93.0" text="*" />
+            <Label fx:id="lbMensaje7" layoutX="283.0" layoutY="93.0" text="*" />
+            <ComboBox fx:id="cbProbeedor" layoutX="15.0" layoutY="63.0" onAction="#onComboBoxProveedores" prefHeight="27.0" prefWidth="246.0" />
+            <Label fx:id="lbProveedor" layoutX="25.0" layoutY="68.0" text="Seleccioné un proveedor aquí" />
+            <Label fx:id="lbTipo" layoutX="546.0" layoutY="68.0" text="Seleccione un tipo" visible="false" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneMensajeEliminar" layoutX="275.0" layoutY="423.0" prefHeight="160.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensajeEliminar" alignment="CENTER" layoutY="11.0" prefHeight="36.0" prefWidth="315.0" text="Borrar producto" />
+            <Button fx:id="btnSi" layoutX="102.0" layoutY="119.0" mnemonicParsing="false" onAction="#onSi" prefHeight="27.0" prefWidth="51.0" text="Si" />
+            <Button layoutX="164.0" layoutY="119.0" mnemonicParsing="false" onAction="#onNo" prefHeight="27.0" prefWidth="51.0" text="No" />
+            <Label fx:id="lbNombreProveedor" alignment="CENTER" layoutX="11.0" layoutY="63.0" prefHeight="17.0" prefWidth="295.0" text="..." textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="98.0" text="No podra volver a recuperar la información" />
+            <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="284.0" />
+         </children>
+         <effect>
+            <DropShadow height="38.79" radius="21.86" width="50.65" />
+         </effect>
+      </Pane>
+      <Pane fx:id="paneMensaje" layoutX="275.0" layoutY="7.0" prefHeight="56.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensaje5" alignment="CENTER" layoutX="15.0" layoutY="10.0" prefHeight="36.0" prefWidth="284.0" text="Guardado" />
+         </children>
+         <effect>
+            <DropShadow height="26.93" radius="18.895" width="50.65" />
+         </effect>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Mi_negocioController">
+   <children>
+      <Pane fx:id="paneMes" layoutX="31.0" layoutY="14.0" prefHeight="173.0" prefWidth="556.0">
+         <children>
+            <Label layoutX="208.0" layoutY="9.0" text="Añadir empleado">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="18.0" layoutY="39.0" prefHeight="3.0" prefWidth="512.0" />
+            <TextField fx:id="tfNombre" layoutX="18.0" layoutY="60.0" promptText="Nombre y apellido" />
+            <TextField fx:id="tfCelular" layoutX="182.0" layoutY="60.0" promptText="Teléfono/Celular" />
+            <TextField fx:id="tfDireccion" layoutX="342.0" layoutY="60.0" prefHeight="27.0" prefWidth="190.0" promptText="Dirección" />
+            <TextField fx:id="tfContrasena" layoutX="17.0" layoutY="111.0" prefHeight="27.0" prefWidth="151.0" promptText="Contraseña" />
+            <Button fx:id="btnGuardar" layoutX="392.0" layoutY="111.0" mnemonicParsing="false" onAction="#onGuardar" text="Guardar" />
+            <Button layoutX="469.0" layoutY="111.0" mnemonicParsing="false" onAction="#onCancelar" text="Cancelar" />
+            <ImageView fx:id="ivAEmpleado" fitHeight="25.0" fitWidth="25.0" layoutX="19.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="lbMensaje3" layoutX="343.0" layoutY="46.0" text="*" />
+            <Label fx:id="lbMensaje" layoutX="143.0" layoutY="150.0" text="Los campos marcados con un (*) son obligatorios" textFill="#b8000f" />
+            <Label fx:id="lbMensaje8" layoutX="18.0" layoutY="97.0" text="*" />
+            <Label fx:id="lbMensaje2" layoutX="183.0" layoutY="46.0" text="*" />
+            <Label fx:id="lbMensaje1" layoutX="18.0" layoutY="45.0" text="*" />
+            <MenuButton layoutX="181.0" layoutY="110.0" mnemonicParsing="false" onMouseClicked="#onMenuButon" prefHeight="27.0" prefWidth="151.0" text="Permisos">
+              <items>
+                  <CheckMenuItem fx:id="cmAgregarProveedores" mnemonicParsing="false" onAction="#onValidacionAgregarProveedores" text="Agregar proveedores" />
+                  <CheckMenuItem fx:id="cmAgregarProductos" mnemonicParsing="false" onAction="#onValidacionAgregarProductos" text="Agregar productos" />
+                  <CheckMenuItem fx:id="cmAgregarClientes" mnemonicParsing="false" onAction="#onValidacionAgregarClientes" text="Agregar clientes" />
+                  <CheckMenuItem fx:id="cmLibreta" mnemonicParsing="false" onAction="#onValidacionLibreta" text="Libreta" />
+                  <CheckMenuItem fx:id="cmEstadisticas" mnemonicParsing="false" onAction="#onValidacionEstadisticas" text="Estadisticas" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <CheckMenuItem fx:id="cmNinguno" mnemonicParsing="false" onAction="#onValidacionNinguno" text="Ninguno" />
+              </items>
+            </MenuButton>
+            <Label fx:id="lbMensaje4" layoutX="179.0" layoutY="97.0" text="*" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneProveedores" layoutX="31.0" layoutY="208.0" prefHeight="365.0" prefWidth="815.0">
+         <children>
+            <Separator layoutX="16.0" layoutY="37.0" prefHeight="3.0" prefWidth="774.0" />
+            <Label layoutX="353.0" layoutY="8.0" text="Empleados">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="319.0" prefHeight="3.0" prefWidth="774.0" />
+            <Button fx:id="btnEditar" layoutX="339.0" layoutY="327.0" mnemonicParsing="false" onAction="#onEditarDatos" text="Editar datos" />
+            <TableView fx:id="tvEmpleados" layoutX="14.0" layoutY="42.0" onMousePressed="#onCLickTabla" prefHeight="274.0" prefWidth="774.0">
+               <columns>
+                  <TableColumn fx:id="tcID" prefWidth="37.0" text="ID" visible="false" />
+                  <TableColumn fx:id="tcNombre" editable="false" prefWidth="190.0" sortable="false" text="Nombre y apellido" />
+                  <TableColumn fx:id="tcCelular" editable="false" prefWidth="124.0" sortable="false" text="Teléfono/Celular" />
+                  <TableColumn fx:id="tcDireccion" editable="false" minWidth="0.0" prefWidth="306.0" sortable="false" text="Dirección" />
+                  <TableColumn fx:id="tcContrasena" maxWidth="347.0" minWidth="0.0" prefWidth="154.0" text="Contraseña" />
+               </columns>
+            </TableView>
+            <Button fx:id="btnQuitar" layoutX="444.0" layoutY="327.0" mnemonicParsing="false" onAction="#onBorrar" text="Borrar" />
+            <ImageView fx:id="ivEmpleados" fitHeight="25.0" fitWidth="25.0" layoutX="16.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneDatos" layoutX="600.0" layoutY="14.0" prefHeight="173.0" prefWidth="246.0">
+         <children>
+            <Label layoutX="48.0" layoutY="10.0" text="Color de aplicación">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="18.0" layoutY="39.0" prefHeight="3.0" prefWidth="209.0" />
+            <Button fx:id="btnGuardarTema" disable="true" layoutX="92.0" layoutY="132.0" mnemonicParsing="false" onAction="#onGuardarTema" text="Guardar" />
+            <ImageView fx:id="ivIS" fitHeight="25.0" fitWidth="25.0" layoutX="19.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+            <MenuButton fx:id="mbColor" layoutX="19.0" layoutY="60.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="209.0" text="Seleccione un color aquí">
+               <items>
+                  <RadioMenuItem fx:id="rmiCeleste" mnemonicParsing="false" onAction="#onValidacionCeleste" text="Celeste                                        ">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="colores" />
+                     </toggleGroup>
+                  </RadioMenuItem>
+                  <RadioMenuItem fx:id="rmiPurpura" mnemonicParsing="false" onAction="#onValidacionPurpura" text="Purpura" toggleGroup="$colores" />
+                  <RadioMenuItem fx:id="rmiMorado" mnemonicParsing="false" onAction="#onValidacionMorado" text="Morado" toggleGroup="$colores" />
+                  <RadioMenuItem fx:id="rmiGris" mnemonicParsing="false" onAction="#onValidacionGris" text="Gris" toggleGroup="$colores" />
+                  <RadioMenuItem fx:id="rmiVerde" mnemonicParsing="false" onAction="#onValidacionVerde" text="Verde" toggleGroup="$colores" />
+               </items>
+            </MenuButton>
+            <CheckBox fx:id="cbAnimaciones" layoutX="18.0" layoutY="99.0" mnemonicParsing="false" onAction="#onActivarDesactivarAnimacion" text="Permitir animaciones" />
+         </children>
+      </Pane>
+      <Pane fx:id="paneMensaje" layoutX="275.0" layoutY="7.0" prefHeight="56.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensaje5" alignment="CENTER" layoutX="15.0" layoutY="10.0" prefHeight="36.0" prefWidth="284.0" text="Guardado" />
+         </children>
+         <effect>
+            <DropShadow height="26.93" radius="18.895" width="50.65" />
+         </effect>
+      </Pane>
+      <Pane fx:id="paneMensajeEliminar" layoutX="275.0" layoutY="423.0" prefHeight="160.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensajeEliminar" alignment="CENTER" layoutY="11.0" prefHeight="36.0" prefWidth="315.0" text="Borrar empleado" />
+            <Button fx:id="btnSi" layoutX="102.0" layoutY="119.0" mnemonicParsing="false" onAction="#onSi" prefHeight="27.0" prefWidth="51.0" text="Si" />
+            <Button layoutX="164.0" layoutY="119.0" mnemonicParsing="false" onAction="#onNo" prefHeight="27.0" prefWidth="51.0" text="No" />
+            <Label fx:id="lbNombreEmpleado" alignment="CENTER" layoutX="11.0" layoutY="63.0" prefHeight="17.0" prefWidth="295.0" text="..." textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="42.0" layoutY="98.0" text="No podrá volver a recuperar la información" />
+            <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="284.0" />
+         </children>
+         <effect>
+            <DropShadow height="38.79" radius="21.86" width="50.65" />
+         </effect>
+      </Pane>
+      <Pane fx:id="paneMensajeCerrar" layoutX="275.0" layoutY="423.0" prefHeight="160.0" prefWidth="315.0" visible="false">
+         <children>
+            <Label fx:id="lbMensajeEliminar1" alignment="CENTER" layoutX="12.0" layoutY="71.0" prefHeight="17.0" prefWidth="295.0" text="Para aplicar el nuevo color la aplicación se reiniciará" />
+            <Button fx:id="btnSiCerrar" layoutX="102.0" layoutY="119.0" mnemonicParsing="false" onAction="#onSiCerrar" prefHeight="27.0" prefWidth="51.0" text="Si" />
+            <Button layoutX="164.0" layoutY="119.0" mnemonicParsing="false" onAction="#onNoCerrar" prefHeight="27.0" prefWidth="51.0" text="No" />
+            <Label alignment="CENTER" layoutY="11.0" prefHeight="35.0" prefWidth="315.0" text="Reiniciar" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Separator layoutX="16.0" layoutY="45.0" prefHeight="3.0" prefWidth="284.0" />
+         </children>
+         <effect>
+            <DropShadow height="38.79" radius="21.86" width="50.65" />
+         </effect>
+      </Pane>
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPane>

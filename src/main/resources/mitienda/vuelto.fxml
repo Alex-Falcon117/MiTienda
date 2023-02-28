@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="190.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.VueltoController">
+   <children>
+      <TextField layoutX="41.0" layoutY="12.0" prefHeight="27.0" prefWidth="318.0" text="Dinero entregado" />
+      <Label contentDisplay="RIGHT" layoutX="41.0" layoutY="86.0" text="Vuelto:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <Label text="..." />
+         </graphic>
+      </Label>
+      <Button layoutX="151.0" layoutY="119.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="99.0" text="Calcular" />
+      <Label contentDisplay="RIGHT" layoutX="41.0" layoutY="55.0" text="Total:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <Label text="..." />
+         </graphic>
+      </Label>
+      <Button fx:id="btnQuitar" layoutX="151.0" layoutY="155.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="99.0" text="Cerrar" />
+   </children>
+</AnchorPane>

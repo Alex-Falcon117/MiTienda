@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Sin_conexionController">
+   <children>
+      <Label layoutX="142.0" layoutY="33.0" text="No se pudo conectar a la Base de Datos">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ImageView fx:id="iv_conexion" fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="btnCerrar" layoutX="231.0" layoutY="350.0" mnemonicParsing="false" onAction="#onReintentar" prefHeight="27.0" prefWidth="138.0" text="Cerrar" />
+      <Label layoutX="142.0" layoutY="62.0" text="-Póngase en contacto con el servicio técnico" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" minHeight="600.0" minWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+   <left>
+      <VBox fx:id="vbox" alignment="TOP_RIGHT" minHeight="600.0" minWidth="100.0" prefHeight="600.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="ivLogo" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="199.0" text="Bienvenido">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbUsuario" alignment="CENTER" prefHeight="17.0" prefWidth="202.0" text="Label" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <ToggleButton fx:id="btnInicio" alignment="CENTER_LEFT" graphicTextGap="30.0" mnemonicParsing="false" onAction="#onInicio" prefHeight="50.0" prefWidth="190.0" selected="true" text="Inicio" textAlignment="CENTER">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tg" />
+               </toggleGroup>
+               <graphic>
+                  <ImageView fx:id="ivInicio" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <viewport>
+                        <Rectangle2D height="25.0" width="25.0" />
+                     </viewport>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ToggleButton>
+            <ToggleButton fx:id="btnProveedor" alignment="CENTER_LEFT" graphicTextGap="30.0" mnemonicParsing="false" onAction="#onProveedor" prefHeight="50.0" prefWidth="190.0" text="Agregar proveedores" textAlignment="CENTER" toggleGroup="$tg">
+               <graphic>
+                  <ImageView fx:id="ivProveedor" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnProductos" alignment="CENTER_LEFT" graphicTextGap="30.0" mnemonicParsing="false" onAction="#onProducto" prefHeight="50.0" prefWidth="190.0" text="Agregar productos" textAlignment="CENTER" toggleGroup="$tg">
+               <graphic>
+                  <ImageView fx:id="ivProducto" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnCientes" alignment="CENTER_LEFT" graphicTextGap="30.0" mnemonicParsing="false" onAction="#onCliente" prefHeight="50.0" prefWidth="190.0" text="Agregar clientes" textAlignment="CENTER" toggleGroup="$tg">
+               <graphic>
+                  <ImageView fx:id="ivCliente" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnLibreta" alignment="CENTER_LEFT" graphicTextGap="30.0" minHeight="25.0" minWidth="100.0" mnemonicParsing="false" onAction="#onLibreta" prefHeight="50.0" prefWidth="190.0" text="Libreta" textAlignment="CENTER" toggleGroup="$tg">
+               <graphic>
+                  <ImageView fx:id="ivLibreta" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnEstadistica" alignment="CENTER_LEFT" graphicTextGap="30.0" mnemonicParsing="false" onAction="#onEstadisticas" prefHeight="50.0" prefWidth="190.0" text="Estadísticas" textAlignment="CENTER" toggleGroup="$tg">
+               <graphic>
+                  <ImageView fx:id="ivEstadistica" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnMiNegocio" alignment="CENTER_LEFT" graphicTextGap="30.0" mnemonicParsing="false" onAction="#onMiTienda" prefHeight="50.0" prefWidth="190.0" text="Mi negocio" textAlignment="CENTER" toggleGroup="$tg">
+               <graphic>
+                  <ImageView fx:id="ivNegocio" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></ToggleButton>
+            <ToggleButton fx:id="btnCerrarSecion" alignment="CENTER_LEFT" graphicTextGap="30.0" mnemonicParsing="false" onAction="#onCerrarSecion" prefHeight="50.0" prefWidth="190.0" text="Cerrar sesión" textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fx:id="ivCerrar" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </ToggleButton>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <effect>
+            <DropShadow height="3.21" radius="12.965" spread="0.12" width="50.65" />
+         </effect>
+      </VBox>
+   </left>
+</BorderPane>
